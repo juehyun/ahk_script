@@ -1,96 +1,181 @@
-# AHK configuration file 
+# AHK scripts
 
-- This is a AHK script file to configure hot-keys for my Windows system
+- This is AHK (Auto Hot Key) script files for Windows system
 
-- This file is configured for private favor, not for general :-)
+# Requirements
 
-- My favor is ...
-	- move, reisze windows using mouse as like linux (code from Jonny, http://www.autohotkey.com) 
-	- move, resize windows using keyboard 
-	- raise/lower, set always-on-top windows as like linux
-	- arrange windows using keyboard (similar to power-toy FancyZones, but not support GUI configuration :-)
-	- use TotalCommander using number key (not Fn key, especially for small-sized-fn-key-laptop)
-	- use TotalCommander using vim key (hjkl) instead of arrow key
-	- I love TotalCommander, I love Vim
+- Download and install 'AutoHotkey' from autohotkey.com
+- Execute AHK script by double click the script file. That's all
+- If you want to run specific AHK script(s) at Windows startup, copy or make link AHK script file to following location
+	```
+	%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\<yourscript.ahk>
+	```
+- Refer autohotkey.com for more details about AHK script
 
-- Refer following hot-key for more details
+# AHK configuration files and its feature
 
+- Each AHK script file, in this repository, has its own features as described below
+- You can use an AHK file or you can integrate several scripts (using '#include') to combine features
 
-# The Hotkey list
-```
-; drawRect                                           ;;;; Highlight (Draw Box) the windows "Always On Top" set
-; ^!+#R        ::                                    ;;;; Reload this AHK script
-; Capslock     ::                                    ;;;; Mapping CapsLock to Han/Eng, Long press is 'Capslock' (as like Mac )
-; !4           :: Send !{F4}                         ;;;; Close window (for laptop)
-; #q           :: Send !{F4}                         ;;;; Close window (as like Mac Cmd+Q)
-; #f           :: Run "C:\Everything\Everything.exe" ;;;; Searching "Everything" (as like Mac finder)
-; >+Up         :: Send {Volume_Up}                   ;;;; Media Control
-; >+Down       :: Send {Volume_Down}                 ;;;; Media Control
-; >+Right      :: Send {Media_Next}                  ;;;; Media Control
-; >+Left       :: Send {Media_Play_Pause}            ;;;; Media Control
-; ^!0          ::                                    ;;;; Media Rating (MusicBee)
-; ^!1          ::                                    ;;;; Media Rating (MusicBee)
-; ^!2          ::                                    ;;;; Media Rating (MusicBee)
-; ^!3          ::                                    ;;;; Media Rating (MusicBee)
-; ^!4          ::                                    ;;;; Media Rating (MusicBee)
-; ^!5          ::                                    ;;;; Media Rating (MusicBee)
-; #t           :: WinSet, AlwaysOnTop, On, A         ;;;; Windows Always On Top (Set)
-; #u           :: WinSet, Top   , , A                ;;;; Windows Raise (or use mouse click)
-; #n           :: WinSet, Bottom, , A                ;;;; Windows Lower (override windows hotkey)
-; +Esc         :: raiseLowerCurrentActiveWindow()    ;;;; Windows Raise or Lower (as like linux)
-; !Tab         :: Send ^!{Tab}                       ;;;; Show fixed task manager, and select widdow using numpad key
-; #=           :: maxRestoreWindow()                 ;;;; Windows Maximize or Restore ( #{Up}, #{Down} )
-; #k           :: moveWindow("Up")                   ;;;; Move window (to up)
-; #j           :: moveWindow("Down")                 ;;;; Move window (to down)
-; #h           :: moveWindow("Left")                 ;;;; Move window (to left)
-; #l           :: moveWindow("Right")                ;;;; Move window (to right) (to use #l, disable window lock using 'gpedit.msc', User Config > Admin Template > System > Ctrl+Alt+Del options / Remove Lock Computer 'Use')
-; #+k          :: resizeWindow("Up")                 ;;;; Resize window (reduce height)
-; #+j          :: resizeWindow("Down")               ;;;; Resize window (enlarge height)
-; #+h          :: resizeWindow("Left")               ;;;; Resize window (reduce width)
-; #+l          :: resizeWindow("Right")              ;;;; Reisze window (enlarge width)
-; #!h          :: moveWindowToOtherMonitor("Left")   ;;;; Move current window to left  multi-monitor
-; #!l          :: moveWindowToOtherMonitor("Right")  ;;;; Move current window to right multi-monitor
-; #^h          :: Send ^#{Left}                      ;;;; Change to left virtual desktop
-; #^l          :: Send ^#{Right}                     ;;;; Change to right virtual desktop
-; h            :: Send {Left}                        ;;;; Selct window in task-switcher (after Ctrl+Alt+Tab)
-; j            :: Send {Down}                        ;;;; Selct window in task-switcher (after Ctrl+Alt+Tab)
-; k            :: Send {Up}                          ;;;; Selct window in task-switcher (after Ctrl+Alt+Tab)
-; l            :: Send {Right}                       ;;;; Selct window in task-switcher (after Ctrl+Alt+Tab)
-; NumpadUp     :: moveWindow("Up")                   ;;;; Move window (to up)
-; NumpadDown   :: moveWindow("Down")                 ;;;; Move window (to down)
-; NumpadLeft   :: moveWindow("Left")                 ;;;; Move window (to left)
-; NumpadRight  :: moveWindow("Right")                ;;;; Move window (to right)
-; NumpadHome   :: WinSet, AlwaysOnTop, On , A        ;;;; Windows Always On Top (Set)
-; NumpadEnd    :: WinSet, AlwaysOnTop, Off, A        ;;;; Windows Always On Top (Clear)
-; NumpadPgUp   :: WinSet, Top   , , A                ;;;; Windows Raise
-; NumpadPgDn   :: WinSet, Bottom, , A                ;;;; Windows Lower
-; +NumpadUp    :: resizeWindow("Up")                 ;;;; Resize window (reduce height)
-; +NumpadDown  :: resizeWindow("Down")               ;;;; Resize window (enlarge height)
-; +NumpadLeft  :: resizeWindow("Left")               ;;;; Resize window (reduce width)
-; +NumpadRight :: resizeWindow("Right")              ;;;; Reisze window (enlarge width)
-; !NumpadLeft  :: moveWindowToOtherMonitor("Left")   ;;;; Move current window to left  multi-monitor
-; !NumpadRight :: moveWindowToOtherMonitor("Right")  ;;;; Move current window to right multi-monitor
-; ^NumpadLeft  :: Send ^#{Left}                      ;;;; Change to left virtual desktop
-; ^NumpadRight :: Send ^#{Right}                     ;;;; Change to right virtual desktop
-; #0           :: setWindowToPredefinedArea(0)       ;;;; set position and size of active window as #0 area
-; #1           :: setWindowToPredefinedArea(1)       ;;;; set position and size of active window as #1 area
-; #2           :: setWindowToPredefinedArea(2)       ;;;; set position and size of active window as #2 area
-; #3           :: setWindowToPredefinedArea(3)       ;;;; set position and size of active window as #3 area
-; #4           :: setWindowToPredefinedArea(4)       ;;;; set position and size of active window as #4 area
-; #5           :: setWindowToPredefinedArea(5)       ;;;; set position and size of active window as #5 area
-; #6           :: setWindowToPredefinedArea(6)       ;;;; set position and size of active window as #6 area
-; #7           :: setWindowToPredefinedArea(7)       ;;;; set position and size of active window as #7 area
-; #8           :: setWindowToPredefinedArea(8)       ;;;; set position and size of active window as #8 area
-; #9           :: setWindowToPredefinedArea(9)       ;;;; set position and size of active window as #9 area
-; #-           :: setWindowMaximizeHorizontal()      ;;;; maximize horizontal
-; #=           :: setWindowMaximizeVertical()        ;;;; maximize vertical
-; #^+s         :: saveSession()                      ;;;; Save Sessions (Visible Windows Position and Size)
-; #^+r         :: restoreSession()                   ;;;; Restore Sessions (Visible Windows Position and Size)
-; #LButton     ::                                    ;;;; Move windows (DoubleAlt : minimize)
-; #RButton     ::                                    ;;;; Resize windows (DoubleAlt : maximize)
-; #MButton     ::                                    ;;;; DoubleAlt : Close Window
-; TTOTAL_CMD                                         ;;;; Total Commander (Use number key instead of Fn key, for small-sized-fn-key-laptop)
-```
+- Legend 
+	```
+	- ^ : Ctrl-Key
+	- # : Win-Key
+	- ! : Alt-Key
+	- + : Shift-Key
+	- < : Indicate left  side key ( e.g. <+ means left  shift key)
+	- > : Indicate right side key ( e.g. >^ means right ctrl  key)
+	```
+
+## libFunctions.ahk
+
+- AHK function library for all other scripts
+
+- This file is commonly #included to all other AHK scripts
+
+## all.ahk
+
+- Integrate all AHK files in a single script
+- Simply use all.ahk file to use all features
+
+## reloadScript.ahk
+
+- If you modify AHK script file, you can reload it with hot-key
+	```
+	^!+#R                            ;;;; Reload this AHK script
+	```
+
+## highlightAlwaysOnTopWindow.ahk
+
+- highlight the windows which is set "AlwaysOnTop" attribute
+- You can set "alwaysOnTop" attribute with the hotkey in "moveResizeSetWindowsWithKeyboard.ahk" script
+
+## macCapslock.ahk
+
+- Emulate Mac's capslock key
+	```
+	Capslock key short press         ;;;; switch Hangul/Eng
+	Capslock key long  press         ;;;; toggle Capslock
+	```
+
+## moveReiszeSetWindowsWithMouse.ahk
+
+- Use mouse to move, reisze window (as like Ubuntu linux)
+
+	```
+	#Enter                     ;;;; Win+Enter, and then use mouse to Move windows
+	+#Enter                    ;;;; Shift+Win+Enter, and then use mouse to Resize windows
+	#LButton                   ;;;; Win+LButton and drag mouse to Move windows
+	#RButton:                  ;;;; WIn+RButton and drag mouse to resize windows
+	```
+
+- Use mouse gesture for (taskSwitcher, go prev/next tab, close tab, close window, etc.,)
+	| Gesture                      | Action      
+	|------------------------------|------------ 
+	| RButton/LButton dual click   | drag -> move window
+	| RButton double click         | drag -> resize window
+	| RButton (short) swipe  up    | taskSwitcher
+	| RButton (long ) swipe  up    | taskSwitcher
+	| RButton (short) swipe  dn    | lowerCurrentActiveWindow()
+	| RButton (long ) swipe  dn    | #{Down}   , minimize
+	| RButton (short) swipe  left  | !{Left}   , browser go back
+	| RButton (long ) swipe  left  | ^#{Right} , change virtual desktop
+	| RButton (short) swipe  right | !{Right}  , browser go forward
+	| RButton (long ) swipe  right | ^#{Left } , change virtual desktop
+	| RButton (short) swipe  ↖     | ^+{Tab}   , prev tab
+	| RButton (long ) swipe  ↖     | none      , reserved
+	| RButton (short) swipe  ↗     | ^{Tab}    , next tab
+	| RButton (long ) swipe  ↗     | maxRestoreWindow()
+	| RButton (short) swipe  ↙     | ^w        , close tab
+	| RButton (long ) swipe  ↙     | !{F4}     , close window
+	| RButton (short) swipe  ↘     | Send {F5} , reload web browser
+	| RButton (long ) swipe  ↘     | none      , reserved
+	--------------------------------------------
+
+## moveReiszeSetWindowsWithKeyboard.ahk
+
+- move, resize, raise, lower, set always on top (using keyboard)
+
+	```
+	-    Numpad Arrow          ;;;; move   current window
+	-  + Numpad Arrow          ;;;; reisze current window
+	-  ! Numpad Arrow          ;;;; move   current window to other monitor (i.e. multi monitor)
+	-  ^ Numpad Arrow          ;;;; change to other virtual desktop (Win+Ctrl+Left/Right)
+	-    Numpad Home           ;;;; set AlwaysOnTop
+	-    NumpadPgUp            ;;;; raise Window
+	-    NumpadPgDn            ;;;; lower Window
+
+	- #  h/j/k/l               ;;;; move   current window
+	- #+ h/j/k/l               ;;;; reisze current window
+	- #! h/j/k/l               ;;;; move   current window to other monitor (i.e. multi monitor)
+	- #^ h/l                   ;;;; change to other virtual desktop (Win+Ctrl+Left/Right)
+	- #  t                     ;;;; set AlwaysOnTop
+	-    Mouse Click           ;;;; raise Window
+	- #  Space                 ;;;; lower Window
+	```
+		
+## totalCommander.ahk
+
+- I love totalcommander program
+- Use number key as func key (especially for function-key-less-keyboard or small-function-key-laptop
+	- Ex)
+	- 1~9,0 -> F1~F9,F10
+	- Alt+4 -> Alt+F4
+	- Shift+6 -> Shift+F6
+	- and so on.,
+
+- Use 'h/j/k/l' (as like vim) key as 'left/right/up/down' arrow key in file list pane
+	- Also use 'h/j/k/l' with Shift/Ctrl/Alt key as if it is arrow key
+
+- Use '/<letters>' to search file in current file list pane
+	- set totalcommander 'Quick Search' with 'Letters - with search dialog'
+
+- Others
+	```
+	=        ;;;; selection, mark
+	-        ;;;; unselect , clear mark
+	\        ;;;; invert selection
+	^=       ;;;; select all
+	^-       ;;;; unselect all
+	!5::     ;;;; archive (copy) files
+	!+5::    ;;;; archive (move) files
+	+2::     ;;;; compare files and directorys (cm_CompareDirsWithSubdirs)
+	^PgUp    ;;;; move to prev tab
+	^PgDn    ;;;; move to next tab
+	+g       ;;;; go to end of list
+	^+c      ;;;; copy file name to clipboard (as text string)
+	^+v      ;;;; rename file name with the text in clipboard (use with ^+c)
+	+Enter   ;;;; rename (edit) file name 
+	... and so on., (see totalCommander.ahk)
+	```
+
+## vncViewer.ahk
+
+- Hotkeys only for vnc viewer (RealVNC, TightVNC, TigerVNC) 
+
+## windowsCommon.ahk
+
+- Close windows
+	```
+	!4      ;;;; Close window (for laptop)
+	#q      ;;;; Close window (as like Mac Cmd+Q)
+	```
+
+## mediaControl.ahk
+- Windows media control (PlayPause/Next/Prev/VolumeUp/VolumeDown/Rating)
+	```
+	>+Up       Send {Volume_Up}          ;;;; Media Control
+	>+Down     Send {Volume_Down}        ;;;; Media Control
+	>+Right    Send {Media_Next}         ;;;; Media Control
+	>+Left     Send {Media_Play_Pause}   ;;;; Media Control
+	
+	^!0                                  ;;;; Media Rating (MusicBee)
+	^!1                                  ;;;; Media Rating (MusicBee)
+	^!2                                  ;;;; Media Rating (MusicBee)
+	^!3                                  ;;;; Media Rating (MusicBee)
+	^!4                                  ;;;; Media Rating (MusicBee)
+	^!5                                  ;;;; Media Rating (MusicBee)
+	```
 
 # License 
 

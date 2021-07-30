@@ -12,7 +12,7 @@
 	```
 - Refer autohotkey.com for more details about AHK script
 
-# AHK configuration files and its feature
+# AHK script files and its feature
 
 - Each AHK script file, in this repository, has its own features as described below
 - You can use an AHK file or you can integrate several scripts (using '#include') to combine features

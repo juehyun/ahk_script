@@ -38,26 +38,6 @@
 - Integrate all AHK files in a single script
 - Simply use all.ahk file to use all features
 
-## reloadScript.ahk
-
-- If you modify AHK script file, you can reload it with hot-key
-	```
-	^!+#R                            ;;;; Reload this AHK script
-	```
-
-## highlightAlwaysOnTopWindow.ahk
-
-- highlight the windows which is set "AlwaysOnTop" attribute
-- You can set "alwaysOnTop" attribute with the hotkey in "moveResizeSetWindowsWithKeyboard.ahk" script
-
-## macCapslock.ahk
-
-- Emulate Mac's capslock key
-	```
-	Capslock key short press         ;;;; switch Hangul/Eng
-	Capslock key long  press         ;;;; toggle Capslock
-	```
-
 ## moveReiszeSetWindowsWithMouse.ahk
 
 - Use mouse to move, reisze window (as like Ubuntu linux)
@@ -113,7 +93,27 @@
 	   Mouse Click           ;;;; raise Window
 	#  Space                 ;;;; lower Window
 	```
-		
+	
+## reloadScript.ahk
+
+- If you modify AHK script file, you can reload it with hot-key
+	```
+	^!+#R                            ;;;; Reload this AHK script
+	```
+
+## highlightAlwaysOnTopWindow.ahk
+
+- highlight the windows which is set "AlwaysOnTop" attribute
+- You can set "alwaysOnTop" attribute with the hotkey in "moveResizeSetWindowsWithKeyboard.ahk" script
+
+## macCapslock.ahk
+
+- Emulate Mac's capslock key
+	```
+	Capslock key short press         ;;;; switch Hangul/Eng
+	Capslock key long  press         ;;;; toggle Capslock
+	```
+	
 ## totalCommander.ahk
 
 - I love totalcommander program

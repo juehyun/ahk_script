@@ -17,14 +17,14 @@
 - Each AHK script file, in this repository, has its own features as described below (each ahk script can be run respectively)
 - You can use an AHK file or you can integrate several scripts (using '#include') to combine features (refer. all.ahk)
 
-- Legend 
+- Legend (Keys in AHK script)
 	```
-	- ^ : Ctrl-Key
-	- # : Win-Key
-	- ! : Alt-Key
-	- + : Shift-Key
-	- < : Indicate left  side key ( e.g. <+ means left  shift key)
-	- > : Indicate right side key ( e.g. >^ means right ctrl  key)
+	^ : Ctrl-Key
+	# : Win-Key
+	! : Alt-Key
+	+ : Shift-Key
+	< : Indicate left  side key ( e.g. <+ means left  shift key)
+	> : Indicate right side key ( e.g. >^ means right ctrl  key)
 	```
 
 ## libFunctions.ahk
@@ -97,21 +97,21 @@
 - move, resize, raise, lower, set always on top (using keyboard)
 
 	```
-	-    Numpad Arrow          ;;;; move   current window
-	-  + Numpad Arrow          ;;;; reisze current window
-	-  ! Numpad Arrow          ;;;; move   current window to other monitor (i.e. multi monitor)
-	-  ^ Numpad Arrow          ;;;; change to other virtual desktop (Win+Ctrl+Left/Right)
-	-    Numpad Home           ;;;; set AlwaysOnTop
-	-    NumpadPgUp            ;;;; raise Window
-	-    NumpadPgDn            ;;;; lower Window
+	   Numpad Arrow          ;;;; move   current window
+	 + Numpad Arrow          ;;;; reisze current window
+	 ! Numpad Arrow          ;;;; move   current window to other monitor (i.e. multi monitor)
+	 ^ Numpad Arrow          ;;;; change to other virtual desktop (Win+Ctrl+Left/Right)
+	   Numpad Home           ;;;; set AlwaysOnTop
+	   NumpadPgUp            ;;;; raise Window
+	   NumpadPgDn            ;;;; lower Window
 
-	- #  h/j/k/l               ;;;; move   current window
-	- #+ h/j/k/l               ;;;; reisze current window
-	- #! h/j/k/l               ;;;; move   current window to other monitor (i.e. multi monitor)
-	- #^ h/l                   ;;;; change to other virtual desktop (Win+Ctrl+Left/Right)
-	- #  t                     ;;;; set AlwaysOnTop
-	-    Mouse Click           ;;;; raise Window
-	- #  Space                 ;;;; lower Window
+	#  h/j/k/l               ;;;; move   current window
+	#+ h/j/k/l               ;;;; reisze current window
+	#! h/j/k/l               ;;;; move   current window to other monitor (i.e. multi monitor)
+	#^ h/l                   ;;;; change to other virtual desktop (Win+Ctrl+Left/Right)
+	#  t                     ;;;; set AlwaysOnTop
+	   Mouse Click           ;;;; raise Window
+	#  Space                 ;;;; lower Window
 	```
 		
 ## totalCommander.ahk
@@ -119,10 +119,10 @@
 - I love totalcommander program
 - Use number key as func key (especially for function-key-less-keyboard or small-function-key-laptop
 	- Ex)
-	- 1~9,0 -> F1~F9,F10
-	- Alt+4 -> Alt+F4
-	- Shift+6 -> Shift+F6
-	- and so on.,
+	    1~9,0   -> F1~F9,F10
+	    Alt+4   -> Alt+F4
+	    Shift+6 -> Shift+F6
+	      ... and so on.,
 
 - Use 'h/j/k/l' (as like vim) key as 'left/right/up/down' arrow key in file list pane
 	- Also use 'h/j/k/l' with Shift/Ctrl/Alt key as if it is arrow key

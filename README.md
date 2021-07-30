@@ -14,8 +14,8 @@
 
 # AHK script files and its feature
 
-- Each AHK script file, in this repository, has its own features as described below
-- You can use an AHK file or you can integrate several scripts (using '#include') to combine features
+- Each AHK script file, in this repository, has its own features as described below (each ahk script can be run respectively)
+- You can use an AHK file or you can integrate several scripts (using '#include') to combine features (refer. all.ahk)
 
 - Legend 
 	```

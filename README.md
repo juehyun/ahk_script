@@ -66,7 +66,7 @@
 	#Enter                     ;;;; Win+Enter, and then use mouse to Move windows
 	+#Enter                    ;;;; Shift+Win+Enter, and then use mouse to Resize windows
 	#LButton                   ;;;; Win+LButton and drag mouse to Move windows
-	#RButton:                  ;;;; WIn+RButton and drag mouse to resize windows
+	#RButton:                  ;;;; Win+RButton and drag mouse to resize windows
 	```
 
 - Use mouse gesture for (taskSwitcher, go prev/next tab, close tab, close window, etc.,)

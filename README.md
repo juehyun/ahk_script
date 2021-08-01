@@ -58,8 +58,8 @@
 	| RButton (long ) swipe  ↑     | taskSwitcher
 	| RButton (short) swipe  ↓     | lowerCurrentActiveWindow()
 	| RButton (long ) swipe  ↓     | #{Down}   , minimize
-	| RButton (short) swipe  	&larr     | !{Left}   , browser go back
-	| RButton (long ) swipe  	&larr     | ^#{Right} , change virtual desktop
+	| RButton (short) swipe  	&larr;     | !{Left}   , browser go back
+	| RButton (long ) swipe  	&larr;     | ^#{Right} , change virtual desktop
 	| RButton (short) swipe  →     | !{Right}  , browser go forward
 	| RButton (long ) swipe  →      | ^#{Left } , change virtual desktop
 	| RButton (short) swipe  ↖     | ^+{Tab}   , prev tab 

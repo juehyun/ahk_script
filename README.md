@@ -54,14 +54,14 @@
 	|------------------------------|------------ 
 	| RButton/LButton dual click   | drag -> move window
 	| RButton double click         | drag -> resize window
-	| RButton (short) swipe  up    | taskSwitcher
-	| RButton (long ) swipe  up    | taskSwitcher
-	| RButton (short) swipe  dn    | lowerCurrentActiveWindow()
-	| RButton (long ) swipe  dn    | #{Down}   , minimize
-	| RButton (short) swipe  left  | !{Left}   , browser go back
-	| RButton (long ) swipe  left  | ^#{Right} , change virtual desktop
-	| RButton (short) swipe  right | !{Right}  , browser go forward
-	| RButton (long ) swipe  right | ^#{Left } , change virtual desktop
+	| RButton (short) swipe  ↑     | taskSwitcher
+	| RButton (long ) swipe  ↑     | taskSwitcher
+	| RButton (short) swipe  ↓     | lowerCurrentActiveWindow()
+	| RButton (long ) swipe  ↓     | #{Down}   , minimize
+	| RButton (short) swipe  ←     | !{Left}   , browser go back
+	| RButton (long ) swipe  ←     | ^#{Right} , change virtual desktop
+	| RButton (short) swipe  →     | !{Right}  , browser go forward
+	| RButton (long ) swipe  →      | ^#{Left } , change virtual desktop
 	| RButton (short) swipe  ↖     | ^+{Tab}   , prev tab
 	| RButton (long ) swipe  ↖     | none      , reserved
 	| RButton (short) swipe  ↗     | ^{Tab}    , next tab

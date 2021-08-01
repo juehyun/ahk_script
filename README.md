@@ -54,7 +54,7 @@
 	|------------------------------|------------ 
 	| RButton/LButton dual click   | drag -> move window
 	| RButton double click         | drag -> resize window
-	| RButton (short) swipe  ↑     | taskSwitcher
+	| RButton (short) swipe  ⬆️     | taskSwitcher
 	| RButton (long ) swipe  ↑     | taskSwitcher
 	| RButton (short) swipe  ↓     | lowerCurrentActiveWindow()
 	| RButton (long ) swipe  ↓     | #{Down}   , minimize

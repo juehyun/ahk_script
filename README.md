@@ -117,12 +117,14 @@
 ## totalCommander.ahk
 
 - I love totalcommander program
-- Use number key as func key (especially for function-key-less-keyboard or small-function-key-laptop
-	- Ex)
-	    1~9,0   -> F1~F9,F10
-	    Alt+4   -> Alt+F4
-	    Shift+6 -> Shift+F6
-	      ... and so on.,
+- Use number key as func key (especially for function-key-less-keyboard or small-function-key-laptop)
+  ```
+  Ex)
+    1~9,0   -> F1~F9,F10    # the number key is mapped to Function key only in Total Commander application
+    Alt+4   -> Alt+F4       # Alt, Ctrl and Shift key can be combined with number key (Function key)
+    Shift+6 -> Shift+F6     
+    ... and so on.,
+  ```
 
 - Use 'h/j/k/l' (as like vim) key as 'left/right/up/down' arrow key in file list pane
 	- Also use 'h/j/k/l' with Shift/Ctrl/Alt key as if it is arrow key
